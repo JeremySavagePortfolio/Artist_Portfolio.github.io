@@ -3,15 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="My personal portfolio and projects.">
-  <title>Jeremy Savage | Portfolio</title>
+
+  <title>JeremySavage Portfolio</title>
+  <meta name="description" content="The art portfolio of Jeremy Savage.">
+
   <style>
+    /* 1. GENERAL PAGE SETTINGS */
     * {
       box-sizing: border-box;
     }
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 90px;
     }
 
     body {
@@ -23,26 +27,32 @@
     }
 
     .container {
-      width: min(100% - 40px, 960px);
+      width: min(100% - 40px, 1100px);
       margin: 0 auto;
     }
 
+    /* 2. HEADER AND NAVIGATION */
     header {
+      background: #ffffff;
       border-bottom: 1px solid #eeeeee;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
     nav {
       min-height: 76px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       gap: 20px;
     }
 
     .logo {
       color: #171717;
-      text-decoration: none;
       font-weight: 700;
+      text-decoration: none;
+      font-size: 18px;
     }
 
     .nav-links {
@@ -61,8 +71,9 @@
       color: #000000;
     }
 
+    /* 3. INTRODUCTION */
     .hero {
-      padding: 110px 0 100px;
+      padding: 95px 0 75px;
     }
 
     .eyebrow {
@@ -81,30 +92,66 @@
     }
 
     .intro {
-      max-width: 570px;
+      max-width: 600px;
       color: #666666;
       font-size: 18px;
     }
 
-    .button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 20px;
-      background: #171717;
-      color: #ffffff;
-      border-radius: 5px;
-      text-decoration: none;
-    }
-
-    section {
+    /* 4. ART GALLERY SECTIONS */
+    .gallery-section {
       padding: 55px 0;
       border-top: 1px solid #eeeeee;
     }
 
     h2 {
-      margin: 0 0 18px;
-      font-size: 28px;
+      margin: 0 0 8px;
+      font-size: 30px;
       letter-spacing: -1px;
+    }
+
+    .section-description {
+      margin-top: 0;
+      margin-bottom: 28px;
+      color: #666666;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .artwork {
+      margin: 0;
+      min-width: 0;
+    }
+
+    .artwork img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      background: #f3f3f3;
+      border-radius: 5px;
+    }
+
+    .artwork figcaption {
+      padding-top: 10px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .artwork figcaption span {
+      display: block;
+      color: #777777;
+      font-size: 12px;
+      font-weight: 400;
+    }
+
+    /* 5. ABOUT AND CONTACT */
+    .info-section {
+      padding: 55px 0;
+      border-top: 1px solid #eeeeee;
     }
 
     .muted {
@@ -112,43 +159,35 @@
       color: #666666;
     }
 
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
+    .button {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 11px 18px;
+      background: #171717;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 5px;
     }
 
-    .project {
-      padding: 24px;
-      background: #f6f6f6;
-      border-radius: 8px;
+    .button:hover {
+      background: #444444;
     }
 
-    .project h3 {
-      margin-top: 0;
-    }
-
-    .project p {
-      color: #666666;
-    }
-
-    .project a {
-      color: #171717;
-      font-weight: 700;
-    }
-
+    /* 6. FOOTER */
     footer {
       padding: 28px 0;
+      border-top: 1px solid #eeeeee;
       color: #777777;
       font-size: 13px;
     }
 
-    @media (max-width: 600px) {
+    /* 7. MOBILE PHONE LAYOUT */
+    @media (max-width: 700px) {
       nav {
         align-items: flex-start;
         flex-direction: column;
         justify-content: center;
-        padding: 18px 0;
+        padding: 15px 0;
       }
 
       .nav-links {
@@ -156,84 +195,209 @@
       }
 
       .hero {
-        padding: 75px 0;
+        padding: 65px 0;
       }
 
       h1 {
         letter-spacing: -2px;
       }
 
-      .projects {
+      .gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .gallery {
         grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
+
 <body>
+
+  <!-- 8. TOP HEADER AND MENU -->
   <header>
     <nav class="container">
-      <a class="logo" href="#">YOUR NAME</a>
+      <a class="logo" href="#home">JeremySavage Portfolio</a>
+
       <div class="nav-links">
+        <a href="#drawing">Drawing</a>
+        <a href="#painting">Painting</a>
+        <a href="#sketchbook">Sketchbook</a>
         <a href="#about">About</a>
-        <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </div>
     </nav>
   </header>
 
-  <main>
-    <div class="container">
-      <section class="hero" style="border-top: 0;">
-        <div class="eyebrow">Hello, I'm</div>
-        <h1>Your Name.</h1>
-        <p class="intro">
-          I'm an aspiring professional who enjoys learning,
-          solving problems, and turning ideas into meaningful work.
-        </p>
-        <a class="button" href="#projects">My work ↗</a>
-      </section>
+  <main class="container">
 
-      <section id="about">
-        <h2>A little about me</h2>
-        <p class="muted">
-          Welcome to my portfolio! I'm developing my skills and
-          working on projects that reflect my interests and goals.
-          This website is where I'll share my journey and my work.
-        </p>
-      </section>
+    <!-- 9. INTRODUCTION -->
+    <section class="hero" id="home">
+      <div class="eyebrow">Artist Portfolio</div>
 
-      <section id="projects">
-        <h2>Selected projects</h2>
-        <div class="projects">
-          <article class="project">
-            <h3>Project One</h3>
-            <p>Describe something you've created, learned, or accomplished.</p>
-            <a href="#contact">Learn more ↗</a>
-          </article>
+      <h1>Jeremy Savage.</h1>
 
-          <article class="project">
-            <h3>Project Two</h3>
-            <p>Share another project, skill, or personal achievement.</p>
-            <a href="#contact">Learn more ↗</a>
-          </article>
-        </div>
-      </section>
+      <p class="intro">
+        Welcome to my portfolio.
+      </p>
+    </section>
 
-      <section id="contact">
-        <h2>Let's connect</h2>
-        <p class="muted">
-          Interested in my work? Feel free to get in touch.
-        </p>
-        <a class="button"
-           href="mailto:hello@example.com">Email me ↗</a>
-      </section>
-    </div>
+    <!-- 10. DRAWING GALLERY -->
+    <section class="gallery-section" id="drawing">
+      <h2>Drawing</h2>
+
+      <p class="section-description">
+        Studies, finished drawings, and works on paper.
+      </p>
+
+      <div class="gallery">
+
+        <figure class="artwork">
+          <img src="images/drawing-1.jpg"
+               alt="Charcoal figure drawing">
+          <figcaption>
+            Drawing One
+            <span>Charcoal on paper</span>
+          </figcaption>
+        </figure>
+
+        <figure class="artwork">
+          <img src="images/drawing-2.jpg"
+               alt="Pencil drawing">
+          <figcaption>
+            Drawing Two
+            <span>Pencil on paper</span>
+          </figcaption>
+        </figure>
+
+        <figure class="artwork">
+          <img src="images/drawing-3.jpg"
+               alt="Ink drawing">
+          <figcaption>
+            Drawing Three
+            <span>Ink on paper</span>
+          </figcaption>
+        </figure>
+
+      </div>
+    </section>
+
+    <!-- 11. PAINTING GALLERY -->
+    <section class="gallery-section" id="painting">
+      <h2>Painting</h2>
+
+      <p class="section-description">
+        Colour studies, paintings, and finished canvases.
+      </p>
+
+      <div class="gallery">
+
+        <figure class="artwork">
+          <img src="images/painting-1.jpg"
+               alt="First painting">
+          <figcaption>
+            Painting One
+            <span>Oil on canvas</span>
+          </figcaption>
+        </figure>
+
+        <figure class="artwork">
+          <img src="images/painting-2.jpg"
+               alt="Second painting">
+          <figcaption>
+            Painting Two
+            <span>Acrylic on canvas</span>
+          </figcaption>
+        </figure>
+
+        <figure class="artwork">
+          <img src="images/painting-3.jpg"
+               alt="Third painting">
+          <figcaption>
+            Painting Three
+            <span>Watercolour on paper</span>
+          </figcaption>
+        </figure>
+
+      </div>
+    </section>
+
+    <!-- 12. SKETCHBOOK GALLERY -->
+    <section class="gallery-section" id="sketchbook">
+      <h2>Sketchbook</h2>
+
+      <p class="section-description">
+        Ideas, experiments, studies, and work in progress.
+      </p>
+
+      <div class="gallery">
+
+        <figure class="artwork">
+          <img src="images/sketchbook-1.jpg"
+               alt="Sketchbook study">
+          <figcaption>
+            Study One
+            <span>Sketchbook study</span>
+          </figcaption>
+        </figure>
+
+        <figure class="artwork">
+          <img src="images/sketchbook-2.jpg"
+               alt="Sketchbook drawing">
+          <figcaption>
+            Study Two
+            <span>Pencil study</span>
+          </figcaption>
+        </figure>
+
+        <figure class="artwork">
+          <img src="images/sketchbook-3.jpg"
+               alt="Work in progress">
+          <figcaption>
+            Study Three
+            <span>Work in progress</span>
+          </figcaption>
+        </figure>
+
+      </div>
+    </section>
+
+    <!-- 13. ABOUT ME -->
+    <section class="info-section" id="about">
+      <h2>About me</h2>
+
+      <p class="muted">
+        I'm Jeremy Savage, this is my portfolio.
+      </p>
+    </section>
+
+    <!-- 14. CONTACT -->
+    <section class="info-section" id="contact">
+      <h2>Get in touch</h2>
+
+      <p class="muted">
+        Feel free
+        to contact me.
+      </p>
+
+      <a class="button"
+         href="mailto:Jeremypsavage@gmail.com">
+        Email me ↗
+      </a>
+    </section>
+
   </main>
 
+  <!-- 15. BOTTOM OF PAGE -->
   <footer>
     <div class="container">
-      © 2026 Your Name. All rights reserved.
+      © 2026 Jeremy Savage. All rights reserved.
     </div>
   </footer>
+
 </body>
 </html>
