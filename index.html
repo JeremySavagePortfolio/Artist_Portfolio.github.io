@@ -11,7 +11,11 @@
         content="Jeremy Savage's art portfolio featuring painting, drawing, and sketchbooks.">
 
   <style>
-  
+  .site-banner {
+  position: relative;
+  opacity: 1;
+  transition: opacity 0.1s linear;
+}
 .site-banner {
   width: 100%;
   margin: 0;
@@ -627,6 +631,28 @@
       © 2026 Jeremy Savage
     </div>
   </footer>
+
+<script>
+  const banner = document.querySelector('.site-banner');
+
+  if (banner) {
+    function fadeBanner() {
+      const fadeDistance = 400;
+      const fade = Math.max(
+        0,
+        1 - window.scrollY / fadeDistance
+      );
+
+      banner.style.opacity = fade;
+    }
+
+    window.addEventListener('scroll', fadeBanner, {
+      passive: true
+    });
+
+    fadeBanner();
+  }
+</script>
 
 </body>
 </html>
