@@ -11,7 +11,38 @@
         content="Jeremy Savage's art portfolio featuring painting, drawing, and sketchbooks.">
 
   <style>
-    
+  
+.site-banner {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.site-banner picture {
+  display: block;
+  width: 100%;
+}
+
+.site-banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+@media (min-width: 601px) {
+  .site-banner img {
+    max-width: 850px;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-banner img {
+    max-width: 100%;
+  }
+}
+  
 /* UNDER CONSTRUCTION BANNER */
 
 .construction-banner {
@@ -352,7 +383,18 @@
 
     </nav>
   </header>
-  
+  <!-- RESPONSIVE ARTWORK BANNER -->
+<div class="site-banner">
+  <picture>
+    <source
+      media="(max-width: 600px)"
+      srcset="images/banner-phone.jpg">
+
+    <img
+      src="images/banner-desktop.jpg"
+      alt="Original artwork by Jeremy Savage">
+  </picture>
+</div>
   <main class="container">
 
     <!-- PORTFOLIO INTRODUCTION -->
