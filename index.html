@@ -14,7 +14,11 @@
   .site-banner {
   position: relative;
   opacity: 1;
-  transition: opacity 0.1s linear;
+}
+@media (max-width: 600px) {
+  .site-banner {
+    transition: opacity 0.3s linear;
+  }
 }
 .site-banner {
   width: 100%;
@@ -633,11 +637,18 @@
   </footer>
 
 <script>
+ <script>
   const banner = document.querySelector('.site-banner');
 
   if (banner) {
     function fadeBanner() {
-      const fadeDistance = 400;
+  
+      if (window.innerWidth > 600) {
+        banner.style.opacity = 1;
+        return;
+      }
+
+      const fadeDistance = 900;
       const fade = Math.max(
         0,
         1 - window.scrollY / fadeDistance
@@ -650,8 +661,11 @@
       passive: true
     });
 
+    window.addEventListener('resize', fadeBanner);
+
     fadeBanner();
   }
+</script>
 </script>
 
 </body>
