@@ -17,7 +17,7 @@
 }
 @media (max-width: 600px) {
   .site-banner {
-    transition: opacity 0.3s linear;
+    transition: opacity 0.4s linear;
   }
 }
 .site-banner {
@@ -33,15 +33,14 @@
 }
 
 .site-banner img {
-  display: block;
   width: 100%;
+  max-width: 100%;
   height: auto;
-  margin: 0 auto;
 }
-
 @media (min-width: 601px) {
   .site-banner img {
-    max-width: 850px;
+    max-width: 100%;
+    width: 100%;
   }
 }
 
@@ -637,7 +636,7 @@
   </footer>
 
 <script>
- <script>
+
   const banner = document.querySelector('.site-banner');
 
   if (banner) {
@@ -665,7 +664,6 @@
 
     fadeBanner();
   }
-</script>
 </script>
 
 </body>
