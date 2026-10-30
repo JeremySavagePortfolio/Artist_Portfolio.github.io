@@ -11,14 +11,10 @@
         content="Jeremy Savage's art portfolio featuring painting, drawing, and sketchbooks.">
 
   <style>
-  .site-banner {
+ .site-banner {
   position: relative;
   opacity: 1;
-}
-@media (max-width: 600px) {
-  .site-banner {
-    transition: opacity 0.4s linear;
-  }
+  transition: opacity 0.2s linear;
 }
 .site-banner {
   width: 100%;
@@ -99,12 +95,12 @@
     /* HEADER AND NAVIGATION */
 
     header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: #F7F5F0;
-      border-bottom: 1px solid #DEDAD1;
-    }
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #8CA28D;
+  border-bottom: 1px solid #758A76;
+}
 
     nav {
       min-height: 82px;
@@ -131,7 +127,7 @@
     .nav-links a {
       font-size: 16px;
       text-decoration: none;
-      color: #55534D;
+      color: #25241F;
     }
 
     .nav-links a:hover {
@@ -641,11 +637,6 @@
 
   if (banner) {
     function fadeBanner() {
-  
-      if (window.innerWidth > 600) {
-        banner.style.opacity = 1;
-        return;
-      }
 
       const fadeDistance = 900;
       const fade = Math.max(
